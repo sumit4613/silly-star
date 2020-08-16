@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.utils import timezone
 from model_utils.models import TimeStampedModel
 from django.utils.text import gettext_lazy as _
+from taggit.managers import TaggableManager
 
 
 class PublishedManager(models.Manager):
@@ -37,6 +38,7 @@ class Post(TimeStampedModel):
 
     objects = models.Manager()
     published = PublishedManager()
+    tags = TaggableManager()
 
     def get_absolute_url(self):
         return reverse(
