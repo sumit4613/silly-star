@@ -16,6 +16,9 @@
         <p>This is a simple blog app using Django 3.</p>
         <p>I've written {% total_posts %} posts so far.</p>
         <p>
+            <a href="{% url "blog:post_search" %}">Search for Posts.</a>
+        </p>
+        <p>
             <a href="{% url "blog:post_feed" %}">Subscribe to my RSS Feed.</a>
         </p>
         <h3>Latest Posts</h3>
